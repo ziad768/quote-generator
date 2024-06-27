@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Button from "./buttons/Button";
 
 const App = () => {
-  const url = "https://api.quotable.io/random";
   let quoteData = {
     content: "Let time be your only competitor.",
     author: "Ahmed Saber",
@@ -11,7 +10,7 @@ const App = () => {
   const [quote, setQuote] = useState(quoteData);
 
   const generateQuote = () => {
-    fetch(url)
+    fetch("https://api.quotable.io/random")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
